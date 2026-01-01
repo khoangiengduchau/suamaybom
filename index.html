@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoan Giếng Đức Hậu - Dịch Vụ Uy Tín 24/7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --dark-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--dark-bg);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .navbar-brand {
+            color: var(--primary-color) !important;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .nav-link {
+            color: white !important;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* BANNER SLIDE (SỬA LỖI) */
+        #heroSlider .carousel-item {
+            height: 450px;
+        }
+
+        #heroSlider img {
+            object-fit: cover;
+            height: 100%;
+            filter: brightness(0.6);
+        }
+
+        .carousel-caption {
+            bottom: 30%;
+        }
+
+        /* THANH LIÊN HỆ BÊN TRÁI (STICKY) */
+        .sticky-social {
+            position: fixed;
+            left: 10px;
+            bottom: 120px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn-fb {
+            background: #0084ff;
+        }
+
+        .btn-zalo {
+            background: #0068ff;
+            font-weight: bold;
+        }
+
+        .btn-phone {
+            background: #ff0000;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* KHỐI XÁC MINH SỐ ĐIỆN THOẠI CHO GOOGLE */
+        .verify-box {
+            background: white;
+            margin-top: -60px;
+            position: relative;
+            z-index: 100;
+            border-radius: 15px;
+            border-top: 6px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .phone-text {
+            font-size: 40px;
+            color: var(--primary-color);
+            font-weight: 800;
+            border: 2px dashed var(--primary-color);
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 10px;
+            background: #fffaf5;
+        }
+
+        .footer {
+            background: var(--dark-bg);
+            color: #ccc;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="p-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">KHOAN GIẾNG ĐỨC HẬU</a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sticky-social">
+        <a href="#" class="social-btn btn-fb">FB</a>
+        <a href="https://zalo.me/0908286818" class="social-btn btn-zalo">Zalo</a>
+        <a href="tel:0908286818" class="social-btn btn-phone">📞</a>
+    </div>
+
+    <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/z7219149901574_a665f67c056ad84ba57a5d847ece82a1.jpg" class="d-block w-100"
+                    alt="Khoan giếng">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold text-white">Khoan Giếng Chuyên Nghiệp</h1>
+                    <p class="fs-4 text-warning">Phục vụ 24/7 tại TP.HCM và các tỉnh</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/z7219149923953_61201cb260b25265ffe817fa1b7f658c.jpg" class="d-block w-100"
+                    alt="Sửa máy bơm">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold text-white">Sửa Chữa Máy Bơm Nhanh</h1>
+                    <p class="fs-4 text-warning">Thợ giỏi có mặt sau 15 phút</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container text-center">
+        <div class="verify-box p-4 p-md-5">
+            <h2 class="fw-bold mb-3">DỊCH VỤ ĐIỆN NƯỚC ĐỨC HẬU</h2>
+            <p class="text-muted">Hotline hỗ trợ khách hàng:</p>
+            <div class="phone-text mb-3">0908286818</div>
+            <p class="small text-danger"><i>*</i></p>
+            <a href="tel:0908286818" class="btn btn-warning btn-lg fw-bold px-5 py-3 rounded-pill mt-2">BẤM GỌI NGAY</a>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h3 class="h5 fw-bold text-primary">KHOAN GIẾNG</h3>
+                    <p>Khoan giếng gia đình, công nghiệp, đảm bảo nước sạch đạt chuẩn.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h3 class="h5 fw-bold text-primary">SỬA MÁY BƠM</h3>
+                    <p>Khắc phục máy bơm kêu to, không lên nước, cháy motor tại nhà.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h3 class="h5 fw-bold text-primary">LỌC NƯỚC PHÈN</h3>
+                    <p>Hệ thống lọc nước sinh hoạt khử phèn, khử mùi triệt để 100%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold text-primary mb-5">GIỚI THIỆU VỀ KHOAN GIẾNG ĐỨC HẬU</h2>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-5 col-md-8 mb-4 mb-lg-0 text-center">
+                    <img src="img/hinh3.jpg" class="img-fluid rounded shadow-sm" style="max-width: 90%; height: auto;"
+                        alt="Giới thiệu Khoan Giếng Đức Hậu">
+                </div>
+
+                <div class="col-lg-7">
+                    <p class="lead">Với hơn 15 năm kinh nghiệm trong lĩnh vực điện nước và khoan giếng, chúng tôi tự hào
+                        là đơn vị uy tín hàng đầu tại TP.HCM và các tỉnh lân cận.</p>
+                    <p>Cơ sở <strong>Đức Hậu</strong> chuyên cung cấp các giải pháp toàn diện về nguồn nước sạch cho gia
+                        đình và doanh nghiệp. Chúng tôi hiểu rằng nước sạch là yếu tố quan trọng cho sức khỏe, vì vậy
+                        mọi công trình đều được thi công với sự tận tâm.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-6 mb-3">
+                            <h5 class="fw-bold"><span class="text-primary">✔</span> Thợ Giỏi Tận Tâm</h5>
+                            <p class="small text-muted">Đội ngũ thợ dày dặn kinh nghiệm, xử lý được mọi địa hình khó.
+                            </p>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <h5 class="fw-bold"><span class="text-primary">✔</span> Máy Móc Hiện Đại</h5>
+                            <p class="small text-muted">Trang thiết bị khoan đời mới, đảm bảo tiến độ và chất lượng.</p>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <h5 class="fw-bold"><span class="text-primary">✔</span> Giá Cạnh Tranh</h5>
+                            <p class="small text-muted">Báo giá rõ ràng, không phát sinh chi phí sau thi công.</p>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <h5 class="fw-bold"><span class="text-primary">✔</span> Bảo Hành Dài Hạn</h5>
+                            <p class="small text-muted">Cam kết đồng hành cùng khách hàng, hỗ trợ 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5 class="text-warning fw-bold mb-3">KHOAN GIẾNG ĐỨC HẬU</h5>
+                    <p>Chuyên cung cấp các giải pháp về nước sạch và điện năng lượng mặt trời. 15 năm kinh nghiệm trong
+                        ngành.</p>
+                    <p><b>Địa chỉ: 2/9c ấp đông 1, Xã Thới Tam Thôn, huyện Hóc Môn.</b> TP. Hồ Chí Minh</p>
+                    <p><b>Hotline:</b> 0908286818</p>
+                </div>
+                <div class="col-md-6 mb-4 text-md-end">
+                    <h5 class="text-warning fw-bold mb-3">DỊCH VỤ CHÍNH</h5>
+                    <p>Khoan giếng công nghiệp</p>
+                    <p>Sửa chữa điện nước</p>
+                    <p>Lắp đặt điện mặt trời</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

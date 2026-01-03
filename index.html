@@ -5,41 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khoan Giếng Đức Hậu - Dịch Vụ Uy Tín 24/7</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #ff6600;
+            --secondary-color: #0066cc;
             --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            background-color: var(--light-bg);
+            overflow-x: hidden;
         }
 
         /* HEADER */
         header {
-            background-color: var(--dark-bg);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2d2d2d 100%);
             border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar i {
+            margin-right: 5px;
         }
 
         .navbar-brand {
             color: var(--primary-color) !important;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 26px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .nav-link {
             color: white !important;
             text-transform: uppercase;
             font-weight: 500;
+            padding: 10px 20px !important;
+            transition: all 0.3s;
+            position: relative;
         }
 
         .nav-link:hover {
             color: var(--primary-color) !important;
+            transform: translateY(-2px);
         }
 
-        /* BANNER SLIDE (SỬA LỖI) */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 5px;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* BANNER SLIDE */
         #heroSlider .carousel-item {
             height: 450px;
         }
@@ -54,79 +98,242 @@
             bottom: 30%;
         }
 
-        /* THANH LIÊN HỆ BÊN TRÁI (STICKY) */
+        /* THANH LIÊN HỆ */
         .sticky-social {
             position: fixed;
-            left: 10px;
+            left: 15px;
             bottom: 120px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .social-btn {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            font-size: 14px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.15);
         }
 
         .btn-fb {
-            background: #0084ff;
+            background: linear-gradient(135deg, #0084ff, #0066cc);
         }
 
         .btn-zalo {
-            background: #0068ff;
-            font-weight: bold;
+            background: linear-gradient(135deg, #0068ff, #0052cc);
         }
 
         .btn-phone {
-            background: #ff0000;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
             animation: pulse-red 2s infinite;
         }
 
         @keyframes pulse-red {
-            0% {
+
+            0%,
+            100% {
                 transform: scale(1);
+                box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
             }
 
             50% {
                 transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
+                box-shadow: 0 6px 25px rgba(255, 0, 0, 0.6);
             }
         }
 
-        /* KHỐI XÁC MINH SỐ ĐIỆN THOẠI CHO GOOGLE */
+        /* KHỐI XÁC MINH SỐ ĐIỆN THOẠI */
         .verify-box {
-            background: white;
-            margin-top: -60px;
+            background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+            margin-top: -80px;
             position: relative;
             z-index: 100;
-            border-radius: 15px;
+            border-radius: 20px;
             border-top: 6px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .phone-text {
-            font-size: 40px;
+            font-size: 42px;
             color: var(--primary-color);
             font-weight: 800;
-            border: 2px dashed var(--primary-color);
-            padding: 10px 20px;
+            border: 3px dashed var(--primary-color);
+            padding: 15px 30px;
             display: inline-block;
-            border-radius: 10px;
-            background: #fffaf5;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #fffaf5, #fff3e6);
+            animation: phoneGlow 2s infinite;
+        }
+
+        @keyframes phoneGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+            }
+        }
+
+        /* DỊCH VỤ CARDS */
+        .service-card {
+            transition: all 0.4s;
+            border: none;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* THỐNG KÊ */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color), #ff8833);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* QUY TRÌNH */
+        .process-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), #ff8833);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 20px rgba(255, 102, 0, 0.4);
+        }
+
+        /* KHÁCH HÀNG NÓI GÌ */
+        .testimonial-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 60px 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* GIÁ DỊCH VỤ */
+        .pricing-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .price-card {
+            background: linear-gradient(135deg, white, #f8f9fa);
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .price-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        }
+
+        .price-tag {
+            font-size: 36px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* BẢN ĐỒ */
+        .map-container {
+            width: 100%;
+            height: 450px;
+            filter: grayscale(10%);
+            border-top: 4px solid var(--primary-color);
         }
 
         .footer {
@@ -134,36 +341,77 @@
             color: #ccc;
             padding: 50px 0;
         }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            #heroSlider .carousel-item {
+                height: 350px;
+            }
+
+            .phone-text {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fas fa-clock"></i> Phục vụ 24/7
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <i class="fas fa-phone"></i> Hotline: <strong>0908286818</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header class="p-2">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#">KHOAN GIẾNG ĐỨC HẬU</a>
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-water"></i> KHOAN GIẾNG ĐỨC HẬU
+                </a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Dịch vụ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#process">Quy trình</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+    <!-- THANH LIÊN HỆ -->
     <div class="sticky-social">
-        <a href="#" class="social-btn btn-fb">FB</a>
-        <a href="https://zalo.me/0908286818" class="social-btn btn-zalo">Zalo</a>
-        <a href="tel:0908286818" class="social-btn btn-phone">📞</a>
+        <a href="#" class="social-btn btn-fb" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://zalo.me/0908286818" class="social-btn btn-zalo" title="Zalo">
+            <i class="font-weight">zalo</i>
+        </a>
+        <a href="tel:0908286818" class="social-btn btn-phone" title="Gọi ngay">
+            <i class="fas fa-phone"></i>
+        </a>
     </div>
 
+    <!-- BANNER SLIDE -->
     <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="3000">
@@ -183,110 +431,208 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
     </div>
 
+    <!-- KHỐI LIÊN HỆ NHANH -->
     <div class="container text-center">
         <div class="verify-box p-4 p-md-5">
-            <h2 class="fw-bold mb-3">DỊCH VỤ ĐIỆN NƯỚC ĐỨC HẬU</h2>
-            <p class="text-muted">Hotline hỗ trợ khách hàng:</p>
-            <div class="phone-text mb-3">0908286818</div>
-            <p class="small text-danger"><i>*</i></p>
-            <a href="tel:0908286818" class="btn btn-warning btn-lg fw-bold px-5 py-3 rounded-pill mt-2">BẤM GỌI NGAY</a>
-        </div>
-
-        <div class="row my-5">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <h3 class="h5 fw-bold text-primary">KHOAN GIẾNG</h3>
-                    <p>Khoan giếng gia đình, công nghiệp, đảm bảo nước sạch đạt chuẩn.</p>
-                </div>
+            <h2 class="fw-bold mb-3">
+                <i class="fas fa-shield-alt text-primary"></i>
+                DỊCH VỤ ĐIỆN NƯỚC ĐỨC HẬU
+            </h2>
+            <p class="text-muted fs-5">Hotline hỗ trợ khách hàng 24/7:</p>
+            <div class="phone-text mb-3">
+                <i class="fas fa-phone-volume"></i> 0908286818
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <h3 class="h5 fw-bold text-primary">SỬA MÁY BƠM</h3>
-                    <p>Khắc phục máy bơm kêu to, không lên nước, cháy motor tại nhà.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm p-3">
-                    <h3 class="h5 fw-bold text-primary">LỌC NƯỚC PHÈN</h3>
-                    <p>Hệ thống lọc nước sinh hoạt khử phèn, khử mùi triệt để 100%.</p>
-                </div>
-            </div>
+            <p class="text-success fw-bold mb-3">
+                <i class="fas fa-check-circle"></i> Cam kết phục vụ nhanh chóng, chất lượng
+            </p>
+            <a href="tel:0908286818" class="btn btn-warning btn-lg fw-bold px-5 py-3 rounded-pill mt-2">
+                <i class="fas fa-phone-alt"></i> BẤM GỌI NGAY
+            </a>
         </div>
     </div>
-    <div class="container-fluid bg-white py-5">
+
+    <!-- THỐNG KÊ -->
+    <section class="stats-section">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold text-primary mb-5">GIỚI THIỆU VỀ KHOAN GIẾNG ĐỨC HẬU</h2>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Năm Kinh Nghiệm</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-5 col-md-8 mb-4 mb-lg-0 text-center">
-                    <img src="img/hinh3.jpg" class="img-fluid rounded shadow-sm" style="max-width: 90%; height: auto;"
-                        alt="Giới thiệu Khoan Giếng Đức Hậu">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Khách Hàng</span>
+                    </div>
                 </div>
-
-                <div class="col-lg-7">
-                    <p class="lead">Với hơn 15 năm kinh nghiệm trong lĩnh vực điện nước và khoan giếng, chúng tôi tự hào
-                        là đơn vị uy tín hàng đầu tại TP.HCM và các tỉnh lân cận.</p>
-                    <p>Cơ sở <strong>Đức Hậu</strong> chuyên cung cấp các giải pháp toàn diện về nguồn nước sạch cho gia
-                        đình và doanh nghiệp. Chúng tôi hiểu rằng nước sạch là yếu tố quan trọng cho sức khỏe, vì vậy
-                        mọi công trình đều được thi công với sự tận tâm.</p>
-
-                    <div class="row mt-4">
-                        <div class="col-sm-6 mb-3">
-                            <h5 class="fw-bold"><span class="text-primary">✔</span> Thợ Giỏi Tận Tâm</h5>
-                            <p class="small text-muted">Đội ngũ thợ dày dặn kinh nghiệm, xử lý được mọi địa hình khó.
-                            </p>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <h5 class="fw-bold"><span class="text-primary">✔</span> Máy Móc Hiện Đại</h5>
-                            <p class="small text-muted">Trang thiết bị khoan đời mới, đảm bảo tiến độ và chất lượng.</p>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <h5 class="fw-bold"><span class="text-primary">✔</span> Giá Cạnh Tranh</h5>
-                            <p class="small text-muted">Báo giá rõ ràng, không phát sinh chi phí sau thi công.</p>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <h5 class="fw-bold"><span class="text-primary">✔</span> Bảo Hành Dài Hạn</h5>
-                            <p class="small text-muted">Cam kết đồng hành cùng khách hàng, hỗ trợ 24/7.</p>
-                        </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Hài Lòng</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Hỗ Trợ</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer mt-5">
+    </section>
+
+    <!-- DỊCH VỤ -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary display-5">DỊCH VỤ CỦA CHÚNG TÔI</h2>
+                <p class="text-muted">Giải pháp toàn diện cho mọi nhu cầu về nước</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">KHOAN GIẾNG</h3>
+                        <p class="text-muted">Khoan giếng gia đình, công nghiệp với công nghệ hiện đại. Đảm bảo nước
+                            sạch đạt chuẩn, độ sâu phù hợp với địa chất.</p>
+                        <ul class="text-start mt-3">
+                            <li>Khoan giếng gia đình</li>
+                            <li>Khoan giếng ống</li>
+                            <li>Khoan giếng công nghiệp</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">SỬA MÁY BƠM</h3>
+                        <p class="text-muted">Khắc phục mọi sự cố máy bơm: kêu to, không lên nước, cháy motor, rò rỉ
+                            điện. Thợ giỏi có mặt nhanh chóng.</p>
+                        <ul class="text-start mt-3">
+                            <li>Thay motor máy bơm</li>
+                            <li>Sửa máy bơm tăng áp</li>
+                            <li>Vệ sinh bảo dưỡng</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">LỌC NƯỚC PHÈN</h3>
+                        <p class="text-muted">Hệ thống lọc nước sinh hoạt khử phèn, khử mùi, khử kim loại nặng triệt để
+                            100%. An toàn cho sức khỏe.</p>
+                        <ul class="text-start mt-3">
+                            <li>Lọc nước sinh hoạt</li>
+                            <li>Lọc nước giếng khoan</li>
+                            <li>Xử lý nước nhiễm phèn</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">ĐIỆN MẶT TRỜI</h3>
+                        <p class="text-muted">Lắp đặt hệ thống điện mặt trời hòa lưới, độc lập. Tiết kiệm chi phí điện,
+                            thân thiện môi trường.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">SỬA CHỮA ĐIỆN NƯỚC</h3>
+                        <p class="text-muted">Sửa chữa mọi hệ thống điện nước trong nhà: ống nước vỡ, rò rỉ, điện chập,
+                            hỏng thiết bị.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <h3 class="h5 fw-bold text-primary mb-3">LẮP ĐẶT HỆ THỐNG NƯỚC</h3>
+                        <p class="text-muted">Thi công hệ thống cấp thoát nước, lắp đặt bồn nước, máy nước nóng, thiết
+                            bị vệ sinh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUY TRÌNH LÀM VIỆC -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary display-5">QUY TRÌNH LÀM VIỆC</h2>
+                <p class="text-muted">Chuyên nghiệp - Nhanh chóng - Hiệu quả</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h5 class="fw-bold">Tiếp Nhận</h5>
+                        <p class="text-muted">Khách hàng liên hệ qua hotline hoặc website</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h5 class="fw-bold">Khảo Sát</h5>
+                        <p class="text-muted">Đội ngũ kỹ thuật đến khảo sát và tư vấn</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h5 class="fw-bold">Báo Giá</h5>
+                        <p class="text-muted">Báo giá chi tiết, minh bạch theo yêu cầu</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h5 class="fw-bold">Thi Công</h5>
+                        <p class="text-muted">Thực hiện công việc nhanh chóng, đúng tiến độ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-container" style="width: 100%; height: 450px; border-top: 5px solid #ff6600;"> <iframe
+            src="https://www.google.com/maps?q=2/9C%20Th%E1%BB%9Bi%20Tam%20Th%C3%B4n%2017%2C%20T%C3%A2n%20Ch%C3%A1nh%20Hi%E1%BB%87p%2C%20H%C3%B3c%20M%C3%B4n%2C%20TP.HCM&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"> </iframe> </div>
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <h5 class="text-warning fw-bold mb-3">KHOAN GIẾNG ĐỨC HẬU</h5>
-                    <p>Chuyên cung cấp các giải pháp về nước sạch và điện năng lượng mặt trời. 15 năm kinh nghiệm trong
-                        ngành.</p>
-                    <p><b>Địa chỉ: 2/9c ấp đông 1, Xã Thới Tam Thôn, huyện Hóc Môn.</b> TP. Hồ Chí Minh</p>
+                    <p><b>Địa chỉ:</b> 2/9c, Đ. Thới Tam Thôn 17, Tân Chánh Hiệp, Hóc Môn, Thành phố Hồ Chí Minh, Việt
+                        Nam</p>
                     <p><b>Hotline:</b> 0908286818</p>
                 </div>
                 <div class="col-md-6 mb-4 text-md-end">
                     <h5 class="text-warning fw-bold mb-3">DỊCH VỤ CHÍNH</h5>
-                    <p>Khoan giếng công nghiệp</p>
-                    <p>Sửa chữa điện nước</p>
-                    <p>Lắp đặt điện mặt trời</p>
+                    <p>Khoan giếng công nghiệp - Sửa chữa điện nước - Lắp đặt điện mặt trời</p>
                 </div>
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

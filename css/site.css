@@ -362,6 +362,113 @@ a {
     padding: 6rem 0;
 }
 
+.page-hero {
+    padding: 5rem 0 3rem;
+    background:
+        linear-gradient(135deg, rgba(31, 122, 140, 0.12), rgba(255, 183, 3, 0.12)),
+        #f6fbfd;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.page-hero__content h1 {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.04;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.page-hero__content p {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.page-hero__visual img {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    max-height: 480px;
+}
+
+.page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 1.5rem;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: 1.6rem;
+}
+
+.content-card h2,
+.content-card h3 {
+    margin-bottom: 0.9rem;
+}
+
+.bullet-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--muted);
+}
+
+.bullet-list li + li {
+    margin-top: 0.55rem;
+}
+
+.cta-panel {
+    display: grid;
+    gap: 1rem;
+}
+
+.cta-box {
+    background: linear-gradient(145deg, #1f7a8c, #155b68);
+    color: #fff;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 1.6rem;
+}
+
+.cta-box h3 {
+    margin-bottom: 0.7rem;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.mini-service-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.mini-service-nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(31, 122, 140, 0.1);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
 .section--light {
     background: rgba(255, 255, 255, 0.72);
 }
@@ -864,7 +971,9 @@ a {
 
     .featured-media,
     .why-us,
-    .contact-layout {
+    .contact-layout,
+    .page-grid,
+    .content-grid {
         grid-template-columns: 1fr;
     }
 }

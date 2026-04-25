@@ -2,62 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://khoangiengduchau.com/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/khoan-gieng-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/sua-may-bom-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/sua-dien-nuoc-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/gia-khoan-gieng-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/may-bom-yeu-nuoc-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/nuoc-gieng-bi-phen-hoc-mon.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/khoan-gieng-quan-12.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/sua-may-bom-quan-12.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khoangiengduchau.com/sua-dien-nuoc-quan-12.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://khoangiengduchau.com/ro-ri-ong-nuoc-hoc-mon.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khoangiengduchau.com/chap-dien-nha-tam-quan-12.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

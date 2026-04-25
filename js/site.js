@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const counterItems = document.querySelectorAll("[data-count]");
     const scrollButtons = document.querySelectorAll("[data-scroll-target]");
     const mediaButtons = document.querySelectorAll("[data-media-type]");
+    const hoverDropdowns = document.querySelectorAll(".navbar .dropdown");
     const mediaModalElement = document.getElementById("mediaModal");
     const mediaModalTitle = document.getElementById("mediaModalTitle");
     const mediaModalContent = document.getElementById("mediaModalContent");
@@ -79,6 +80,51 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    if (window.bootstrap) {
+        hoverDropdowns.forEach((dropdown) => {
+            const toggle = dropdown.querySelector(".dropdown-toggle");
+
+            if (!toggle) {
+                return;
+            }
+
+            const dropdownInstance = bootstrap.Dropdown.getOrCreateInstance(toggle);
+            let closeTimer;
+
+            function clearCloseTimer() {
+                if (closeTimer) {
+                    window.clearTimeout(closeTimer);
+                    closeTimer = null;
+                }
+            }
+
+            function shouldUseHover() {
+                return window.matchMedia("(min-width: 992px)").matches;
+            }
+
+            dropdown.addEventListener("mouseenter", () => {
+                if (!shouldUseHover()) {
+                    return;
+                }
+
+                clearCloseTimer();
+                dropdown.classList.add("is-hover-open");
+                dropdownInstance.show();
+            });
+
+            dropdown.addEventListener("mouseleave", () => {
+                if (!shouldUseHover()) {
+                    return;
+                }
+
+                closeTimer = window.setTimeout(() => {
+                    dropdown.classList.remove("is-hover-open");
+                    dropdownInstance.hide();
+                }, 120);
+            });
+        });
+    }
 
     mediaButtons.forEach((button) => {
         button.addEventListener("click", () => {

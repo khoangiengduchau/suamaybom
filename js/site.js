@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 video.controls = true;
                 video.autoplay = true;
                 video.playsInline = true;
+                video.preload = "none";
                 if (poster) {
                     video.poster = poster;
                 }

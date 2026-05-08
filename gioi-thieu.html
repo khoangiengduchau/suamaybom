@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        (function () {
+            const analyticsId = 'G-TT161QECN5';
+            const triggerEvents = ['pointerdown', 'keydown', 'touchstart'];
+            const listenerOptions = { once: true, passive: true };
+            let analyticsLoaded = false;
+
+            function cleanup() {
+                triggerEvents.forEach((eventName) => {
+                    window.removeEventListener(eventName, loadAnalytics, listenerOptions);
+                });
+            }
+
+            function loadAnalytics() {
+                if (analyticsLoaded) {
+                    return;
+                }
+
+                analyticsLoaded = true;
+                cleanup();
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+                document.head.appendChild(script);
+
+                gtag('config', analyticsId);
+            }
+
+            function scheduleAnalytics() {
+                window.setTimeout(loadAnalytics, 3200);
+            }
+
+            triggerEvents.forEach((eventName) => {
+                window.addEventListener(eventName, loadAnalytics, listenerOptions);
+            });
+
+            window.addEventListener('load', scheduleAnalytics, { once: true });
+        }());
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Khoan Giếng Đức Hậu | 15+ Năm Kinh Nghiệm TP.HCM</title>
+    <meta name="description" content="Khoan Giếng Đức Hậu – hơn 15 năm kinh nghiệm khoan giếng, sửa máy bơm và điện nước dân dụng tại Hóc Môn, Quận 12, TP.HCM. Đội ngũ thợ tay nghề cao, báo giá minh bạch.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f7a8c">
+    <meta name="geo.region" content="VN-SG">
+    <meta name="geo.placename" content="Hóc Môn, Quận 12, TP.HCM">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Khoan Giếng Đức Hậu">
+    <meta property="og:title" content="Giới Thiệu Khoan Giếng Đức Hậu | 15+ Năm Kinh Nghiệm TP.HCM">
+    <meta property="og:description" content="Hơn 15 năm kinh nghiệm khoan giếng, sửa máy bơm và điện nước dân dụng tại Hóc Môn, Quận 12, TP.HCM.">
+    <meta property="og:image" content="https://khoangiengduchau.com/img/og-cover.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khoangiengduchau.com/gioi-thieu.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Giới Thiệu Khoan Giếng Đức Hậu | 15+ Năm Kinh Nghiệm TP.HCM">
+    <meta name="twitter:description" content="Hơn 15 năm kinh nghiệm khoan giếng, sửa máy bơm và điện nước dân dụng tại TP.HCM.">
+    <meta name="twitter:image" content="https://khoangiengduchau.com/img/og-cover.jpg">
+    <link rel="canonical" href="https://khoangiengduchau.com/gioi-thieu.html">
+    <link rel="icon" type="image/webp" href="img/logo.webp">
+    <link rel="stylesheet" href="css/site.css?v=20260508-6">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Giới thiệu Khoan Giếng Đức Hậu",
+        "url": "https://khoangiengduchau.com/gioi-thieu.html",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Khoan Giếng Đức Hậu",
+            "@id": "https://khoangiengduchau.com/#business",
+            "telephone": "0908286818",
+            "url": "https://khoangiengduchau.com/",
+            "foundingDate": "2011"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://khoangiengduchau.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Giới thiệu", "item": "https://khoangiengduchau.com/gioi-thieu.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__item"><span class="topbar__dot"></span>Hơn 15 năm kinh nghiệm khoan giếng và điện nước tại TP.HCM</div>
+            <div class="topbar__actions">
+                <a href="tel:0908286818">Hotline: 0908 286 818</a>
+                <a href="https://zalo.me/0908286818" target="_blank" rel="noreferrer">Zalo tư vấn</a>
+            </div>
+        </div>
+    </div>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="Đức Hậu - Khoan giếng và điện nước">
+                    <img src="img/logo.webp" alt="Logo Khoan Giếng Đức Hậu" width="56" height="56">
+                    <span>
+                        <strong>Đức Hậu</strong>
+                        <small>Khoan giếng và điện nước</small>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Mở menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarMenu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Dịch vụ</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-quan-12.html">Khoan giếng Quận 12</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-cong-nghiep.html">Khoan giếng công nghiệp</a></li>
+                                <li><a class="dropdown-item" href="sua-chua-gieng-khoan.html">Sửa chữa giếng khoan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-hoc-mon.html">Sửa máy bơm Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-quan-12.html">Sửa máy bơm Quận 12</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-hoc-mon.html">Sửa điện nước Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-quan-12.html">Sửa điện nước Quận 12</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Bài viết</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="gia-khoan-gieng-hoc-mon.html">Giá khoan giếng Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="may-bom-yeu-nuoc-hoc-mon.html">Máy bơm yếu nước ở Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="nuoc-gieng-bi-phen-hoc-mon.html">Nước giếng bị phèn ở Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="ro-ri-ong-nuoc-hoc-mon.html">Ống nước rò rỉ âm tường</a></li>
+                                <li><a class="dropdown-item" href="chap-dien-nha-tam-quan-12.html">Chập điện nhà tắm Quận 12</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
+                    </ul>
+                    <a class="btn btn-primary btn-call ms-lg-3" href="tel:0908286818">Gọi ngay</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-grid">
+                <div class="page-hero__content">
+                    <span class="eyebrow">Giới thiệu Đức Hậu</span>
+                    <h1>Khoan Giếng Đức Hậu – hơn 15 năm xử lý giếng khoan, máy bơm và điện nước tại TP.HCM.</h1>
+                    <p>Đức Hậu bắt đầu từ những ca sửa máy bơm, khoan giếng nhỏ cho bà con Hóc Môn và Quận 12. Qua hơn 15 năm, đội ngũ dần mở rộng nhưng vẫn giữ cách làm cũ: khảo sát đúng lỗi, báo giá rõ ràng và ưu tiên phương án bền, dễ bảo trì cho khách.</p>
+                    <div class="page-actions">
+                        <a class="btn btn-primary" href="tel:0908286818">Gọi tư vấn ngay</a>
+                        <a class="btn btn-outline-dark" href="index.html#projects">Xem công trình thực tế</a>
+                    </div>
+                    <div class="mini-service-nav">
+                        <a href="index.html">Trang chủ</a>
+                        <a href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a>
+                        <a href="sua-may-bom-hoc-mon.html">Sửa máy bơm</a>
+                        <a href="lien-he.html">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="page-hero__visual">
+                    <img src="img/logo.webp" alt="Logo Khoan Giếng Đức Hậu" width="280" height="280">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container content-grid">
+                <div class="content-card">
+                    <h2>Câu chuyện Đức Hậu</h2>
+                    <p>Xuất phát từ nghề sửa máy bơm và khoan giếng cho các hộ dân ở Tân Chánh Hiệp, Thới Tam Thôn, Đức Hậu tích lũy kinh nghiệm qua hàng ngàn ca thực tế: từ giếng yếu nước, máy bơm cháy tụ, rò rỉ đường ống đến chập điện nhà tắm.</p>
+                    <p>Sau hơn 15 năm, Đức Hậu đã phục vụ hơn 5.000 ca khách tại Hóc Môn, Quận 12 và các khu vực lân cận. Phần lớn khách quay lại hoặc giới thiệu người quen vì cách làm việc rõ ràng: kiểm tra đúng lỗi, nói rõ phương án, báo giá trước khi làm và có hỗ trợ lại nếu hệ thống phát sinh bất thường.</p>
+                </div>
+                <div class="cta-panel">
+                    <div class="cta-box">
+                        <h3>Cần tư vấn dịch vụ?</h3>
+                        <p>Gọi trực tiếp hoặc nhắn Zalo mô tả sự cố để được phản hồi nhanh và chốt lịch khảo sát trong ngày.</p>
+                        <a class="btn btn-primary mt-3" href="tel:0908286818">Gọi 0908 286 818</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--light">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Đội ngũ</span>
+                    <h2>Những người trực tiếp khảo sát và thi công cho khách</h2>
+                    <p>Đức Hậu không thuê ngoài. Mỗi ca khách đều do đội ngũ chính phụ trách từ khảo sát, báo giá đến thi công và bàn giao.</p>
+                </div>
+                <div class="trust-grid">
+                    <article class="reveal">
+                        <h3>Anh Hậu – Chủ cơ sở</h3>
+                        <p>Hơn 15 năm kinh nghiệm trực tiếp khoan giếng, sửa máy bơm và xử lý điện nước dân dụng. Là người tiếp nhận, khảo sát và chốt phương án cho phần lớn các ca khách.</p>
+                    </article>
+                    <article class="reveal">
+                        <h3>Đội thợ kỹ thuật</h3>
+                        <p>Thợ chính có kinh nghiệm nhiều năm, quen xử lý giếng yếu nước, bơm không lên nước, rò rỉ đường ống và các sự cố điện nước tại nhà trọ, hộ gia đình.</p>
+                    </article>
+                    <article class="reveal">
+                        <h3>Phong cách làm việc</h3>
+                        <p>Không ép làm thêm hạng mục không cần thiết. Ưu tiên giải thích rõ để khách hiểu mình đang trả tiền cho phần nào và vì sao nên làm phần đó.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container content-grid">
+                <div class="content-card">
+                    <h2>Giá trị cốt lõi</h2>
+                    <table class="detail-table">
+                        <tbody>
+                            <tr><th>Nguyên tắc</th><th>Cách thực hiện</th></tr>
+                            <tr><td>Khảo sát đúng lỗi</td><td>Kiểm tra thực tế tại công trình, xác định đúng nguyên nhân trước khi chốt phương án.</td></tr>
+                            <tr><td>Báo giá minh bạch</td><td>Tách rõ chi phí vật tư, nhân công, hạng mục chính và phát sinh trước khi thi công.</td></tr>
+                            <tr><td>Thi công gọn, bền</td><td>Ưu tiên phương án giúp hệ thống dùng ổn định lâu dài, hạn chế gọi thợ lặp lại.</td></tr>
+                            <tr><td>Hỗ trợ sau bàn giao</td><td>Nếu hệ thống phát sinh bất thường sau khi làm, khách gọi lại được hỗ trợ kiểm tra.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-card">
+                    <h2>Dịch vụ đang nhận</h2>
+                    <ul class="bullet-list">
+                        <li>Khoan giếng dân dụng và <a href="khoan-gieng-cong-nghiep.html">khoan giếng công nghiệp</a>.</li>
+                        <li><a href="sua-chua-gieng-khoan.html">Sửa chữa giếng khoan</a> cũ bị yếu nước, tụt nước.</li>
+                        <li>Sửa máy bơm nước dân dụng: bơm tăng áp, bơm giếng, bơm chìm.</li>
+                        <li>Lọc nước phèn, xử lý nước giếng bị vàng, tanh hoặc đóng cặn.</li>
+                        <li>Sửa điện nước dân dụng: rò rỉ ống, chập điện, yếu áp.</li>
+                        <li>Lắp đặt hệ thống cấp thoát nước và điện mặt trời.</li>
+                    </ul>
+                    <div class="mini-service-nav mt-4">
+                        <a href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a>
+                        <a href="khoan-gieng-quan-12.html">Khoan giếng Quận 12</a>
+                        <a href="sua-may-bom-hoc-mon.html">Sửa máy bơm</a>
+                        <a href="sua-dien-nuoc-hoc-mon.html">Sửa điện nước</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Liên hệ Đức Hậu</h2>
+                    <p>Nếu bạn cần khoan giếng, sửa máy bơm, sửa điện nước hoặc tư vấn dịch vụ, hãy gọi trực tiếp hoặc nhắn Zalo để được hỗ trợ nhanh nhất.</p>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" href="tel:0908286818">Gọi 0908 286 818</a>
+                        <a class="btn btn-outline-dark" href="https://zalo.me/0908286818" target="_blank" rel="noreferrer">Nhắn Zalo</a>
+                        <a class="btn btn-outline-dark" href="lien-he.html">Xem trang liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div><h3>Khoan Giếng Đức Hậu</h3><p>Dịch vụ khoan giếng, sửa máy bơm, xử lý nước và điện nước dân dụng.</p></div>
+                <div><h3>Thông tin</h3><p>Hotline: <a href="tel:0908286818">0908 286 818</a></p><p>Zalo: <a href="https://zalo.me/0908286818" target="_blank" rel="noreferrer">0908 286 818</a></p></div>
+                <div><h3>Địa chỉ</h3><p>2/9C Thới Tam Thôn 17, Tân Chánh Hiệp, Hóc Môn, TP.HCM</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-cta">
+        <a class="floating-cta__item floating-cta__item--facebook" href="https://www.facebook.com/profile.php?id=61588419036471" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.1h2.4l.4-2.8h-2.8V9.3c0-.8.2-1.3 1.4-1.3H16V5.5c-.6-.1-1.3-.1-1.9-.1-1.9 0-3.2 1.1-3.2 3.3v2.4H8.7v2.8h2.2V21h2.6Z"/></svg>
+        </a>
+        <a class="floating-cta__item floating-cta__item--zalo" href="https://zalo.me/0908286818" target="_blank" rel="noreferrer" aria-label="Nhắn Zalo">Zalo</a>
+        <a class="floating-cta__item floating-cta__item--phone" href="tel:0908286818" aria-label="Gọi ngay">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.2 21 3 12.8 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z"/></svg>
+        </a>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js?v=20260508-6"></script>
+    <script src="js/site.js?v=20260508-6"></script>
+</body>
+</html>

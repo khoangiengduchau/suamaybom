@@ -1,16 +1,50 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT161QECN5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-TT161QECN5');
+
+        (function () {
+            const analyticsId = 'G-TT161QECN5';
+            const triggerEvents = ['pointerdown', 'keydown', 'touchstart'];
+            const listenerOptions = { once: true, passive: true };
+            let analyticsLoaded = false;
+
+            function cleanup() {
+                triggerEvents.forEach((eventName) => {
+                    window.removeEventListener(eventName, loadAnalytics, listenerOptions);
+                });
+            }
+
+            function loadAnalytics() {
+                if (analyticsLoaded) {
+                    return;
+                }
+
+                analyticsLoaded = true;
+                cleanup();
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+                document.head.appendChild(script);
+
+                gtag('config', analyticsId);
+            }
+
+            function scheduleAnalytics() {
+                window.setTimeout(loadAnalytics, 3200);
+            }
+
+            triggerEvents.forEach((eventName) => {
+                window.addEventListener(eventName, loadAnalytics, listenerOptions);
+            });
+
+            window.addEventListener('load', scheduleAnalytics, { once: true });
+        }());
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,9 +76,8 @@
     <meta name="twitter:image:alt" content="Khoan Giếng Đức Hậu tại Hóc Môn, Quận 12, TP.HCM">
     <link rel="canonical" href="https://khoangiengduchau.com/">
     <link rel="icon" type="image/webp" href="img/logo.webp">
-    <link rel="preload" as="image" href="img/khoangieng2.webp" type="image/webp">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/site.css">
+    <link rel="preload" as="image" href="img/khoangieng2.webp" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="css/site.css?v=20260508-6">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -187,7 +220,7 @@
     <header class="site-header">
         <nav id="mainNav" class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#home" aria-label="Khoan Giếng Đức Hậu">
+                <a class="navbar-brand" href="#home" aria-label="Đức Hậu - Khoan giếng và điện nước">
                     <img src="img/logo.webp" alt="Logo Khoan Giếng Đức Hậu" width="56" height="56">
                     <span>
                         <strong>Đức Hậu</strong>
@@ -201,26 +234,35 @@
                 <div id="navbarMenu" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#home">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Dịch vụ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Dịch vụ</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-quan-12.html">Khoan giếng Quận 12</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-cong-nghiep.html">Khoan giếng công nghiệp</a></li>
+                                <li><a class="dropdown-item" href="sua-chua-gieng-khoan.html">Sửa chữa giếng khoan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-hoc-mon.html">Sửa máy bơm Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-quan-12.html">Sửa máy bơm Quận 12</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-hoc-mon.html">Sửa điện nước Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-quan-12.html">Sửa điện nước Quận 12</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Bài viết</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="gia-khoan-gieng-hoc-mon.html">Giá khoan giếng Hóc
-                                        Môn</a></li>
-                                <li><a class="dropdown-item" href="may-bom-yeu-nuoc-hoc-mon.html">Máy bơm yếu nước ở Hóc
-                                        Môn</a></li>
-                                <li><a class="dropdown-item" href="nuoc-gieng-bi-phen-hoc-mon.html">Nước giếng bị phèn ở
-                                        Hóc Môn</a></li>
-                                <li><a class="dropdown-item" href="ro-ri-ong-nuoc-hoc-mon.html">Ống nước bị rò rỉ âm
-                                        tường ở Hóc Môn</a></li>
-                                <li><a class="dropdown-item" href="chap-dien-nha-tam-quan-12.html">Chập điện nhà tắm ở
-                                        Quận 12</a></li>
+                                <li><a class="dropdown-item" href="gia-khoan-gieng-hoc-mon.html">Giá khoan giếng Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="may-bom-yeu-nuoc-hoc-mon.html">Máy bơm yếu nước ở Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="nuoc-gieng-bi-phen-hoc-mon.html">Nước giếng bị phèn ở Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="ro-ri-ong-nuoc-hoc-mon.html">Ống nước rò rỉ âm tường</a></li>
+                                <li><a class="dropdown-item" href="chap-dien-nha-tam-quan-12.html">Chập điện nhà tắm Quận 12</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Hình ảnh</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#process">Quy trình</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
                     </ul>
                     <a class="btn btn-primary btn-call ms-lg-3" href="tel:0908286818">Gọi ngay</a>
                 </div>
@@ -231,11 +273,8 @@
     <main>
         <section id="home" class="hero-section">
             <div class="hero-slider" aria-hidden="true">
-                <picture>
-                    <source srcset="img/khoangieng2.webp" type="image/webp">
-                    <img src="img/khoangieng2.jpg" alt="" fetchpriority="high" decoding="async" width="600"
-                        height="400">
-                </picture>
+                <img src="img/khoangieng2.webp" alt="" fetchpriority="high" loading="eager" decoding="sync"
+                    width="960" height="1280">
             </div>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
@@ -313,88 +352,6 @@
             </div>
         </section>
 
-        <section class="section section--light">
-            <div class="container">
-                <div class="section-heading section-heading--split">
-                    <div>
-                        <span class="eyebrow">Dịch vụ nước, giếng khoan và điện nước tại Hóc Môn</span>
-                        <h2>Khi nào nên gọi thợ khoan giếng, sửa máy bơm nước hoặc sửa điện nước?</h2>
-                    </div>
-                    <a class="btn btn-primary" href="tel:0908286818">Gọi xử lý gấp</a>
-                </div>
-                <div class="urgent-grid">
-                    <article class="urgent-card reveal">
-                        <strong>Mất nước sinh hoạt đột ngột</strong>
-                        <p>Máy bơm chạy nhưng không lên nước, nước lên rất yếu hoặc bồn không có nước dùng.</p>
-                    </article>
-                    <article class="urgent-card reveal">
-                        <strong>Rò rỉ hoặc chập điện nước</strong>
-                        <p>Có dấu hiệu rò điện, chập chờn, ống nước rỉ kéo dài hoặc khu vực ẩm ướt bất thường.</p>
-                    </article>
-                    <article class="urgent-card reveal">
-                        <strong>Giếng yếu nước, nước đổi màu</strong>
-                        <p>Nước lên chậm, có mùi tanh, cặn vàng hoặc hệ lọc cũ không còn xử lý hiệu quả như trước.</p>
-                    </article>
-                    <article class="urgent-card reveal">
-                        <strong>Cần làm sớm để kịp sinh hoạt, kinh doanh</strong>
-                        <p>Nhà trọ, quán ăn, hộ gia đình hoặc xưởng nhỏ cần khôi phục nước, điện đúng trong ngày.</p>
-                    </article>
-                </div>
-                <div class="response-strip reveal">
-                    <div>
-                        <strong>Phản hồi nhanh</strong>
-                        <span>Ưu tiên cuộc gọi mô tả rõ khu vực và dấu hiệu sự cố.</span>
-                    </div>
-                    <div>
-                        <strong>Khảo sát trước khi làm</strong>
-                        <span>Giúp chốt đúng lỗi và tránh phát sinh không cần thiết.</span>
-                    </div>
-                    <div>
-                        <strong>Báo giá rồi mới thi công</strong>
-                        <span>Khách nắm được chi phí trước khi quyết định làm tiếp.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Chọn đúng nhu cầu</span>
-                    <h2>Chọn cách liên hệ nhanh nhất theo đúng sự cố bạn đang gặp</h2>
-                    <p>Nếu bạn đang mất nước, rò rỉ điện nước hoặc cần khảo sát giếng, chọn đúng mục dưới đây sẽ nhanh
-                        hơn nói chung chung từ đầu.</p>
-                </div>
-                <div class="pain-cta-grid">
-                    <article class="pain-cta-card reveal">
-                        <strong>Mất nước, bơm không lên</strong>
-                        <p>Phù hợp khi cần khôi phục nước sinh hoạt nhanh để kịp dùng trong ngày.</p>
-                        <div class="pain-cta-card__actions">
-                            <a class="btn btn-primary" href="tel:0908286818">Gọi xử lý mất nước</a>
-                            <a class="btn btn-outline-dark" href="sua-may-bom-hoc-mon.html">Xem sửa máy bơm nước Hóc
-                                Môn</a>
-                        </div>
-                    </article>
-                    <article class="pain-cta-card reveal">
-                        <strong>Rò rỉ, chập chờn điện nước</strong>
-                        <p>Dành cho ca cần kiểm tra nhanh để tránh lan rộng hoặc gián đoạn sinh hoạt.</p>
-                        <div class="pain-cta-card__actions">
-                            <a class="btn btn-primary" href="tel:0908286818">Gọi kiểm tra điện nước</a>
-                            <a class="btn btn-outline-dark" href="sua-dien-nuoc-quan-12.html">Xem sửa điện nước Quận
-                                12</a>
-                        </div>
-                    </article>
-                    <article class="pain-cta-card reveal">
-                        <strong>Giếng yếu nước, nước phèn</strong>
-                        <p>Dành cho trường hợp cần khảo sát nguồn nước, cải tạo giếng hoặc nâng cấp lọc nước.</p>
-                        <div class="pain-cta-card__actions">
-                            <a class="btn btn-primary" href="tel:0908286818">Gọi khảo sát giếng</a>
-                            <a class="btn btn-outline-dark" href="khoan-gieng-hoc-mon.html">Xem khoan giếng Hóc Môn</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
 
         <section id="services" class="section section--light">
             <div class="container">
@@ -409,8 +366,8 @@
                 </div>
                 <div class="service-grid">
                     <article class="service-card reveal">
-                        <img src="img/khoangieng1.webp" alt="Khoan giếng dân dụng" loading="lazy" decoding="async"
-                            width="600" height="400">
+                        <img src="img/khoangieng1.webp" alt="Khoan giếng dân dụng" loading="lazy" fetchpriority="low" decoding="async"
+                            width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Khoan giếng dân dụng cho nhà dân và công trình</h3>
                             <p>Khảo sát tầng nước, tư vấn độ sâu và cấu hình ống phù hợp để gia đình có nguồn nước ổn
@@ -425,8 +382,7 @@
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <img src="img/maybom.webp" alt="Sửa máy bơm" loading="lazy" decoding="async" width="600"
-                            height="400">
+                        <img src="img/maybom.webp" alt="Sửa máy bơm" loading="lazy" fetchpriority="low" decoding="async" width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Sửa máy bơm nước dân dụng tận nơi</h3>
                             <p>Khôi phục nước sinh hoạt khi máy bơm yếu nước, không lên nước, cháy tụ, hỏng motor hoặc
@@ -441,8 +397,7 @@
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <img src="img/hinh3.webp" alt="Lọc nước phèn" loading="lazy" decoding="async" width="600"
-                            height="400">
+                        <img src="img/hinh3.webp" alt="Lọc nước phèn" loading="lazy" fetchpriority="low" decoding="async" width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Lọc nước phèn và xử lý nước giếng</h3>
                             <p>Nước trong hơn, giảm mùi tanh, giảm cặn vàng và dùng sinh hoạt an tâm hơn.</p>
@@ -454,8 +409,8 @@
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <img src="img/nangluongmattroi.webp" alt="Điện mặt trời" loading="lazy" decoding="async"
-                            width="600" height="400">
+                        <img src="img/nangluongmattroi.webp" alt="Điện mặt trời" loading="lazy" fetchpriority="low" decoding="async"
+                            width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Lắp đặt điện mặt trời</h3>
                             <p>Giảm áp lực tiền điện và có hệ thống thi công gọn, thẩm mỹ, dễ vận hành.</p>
@@ -467,8 +422,7 @@
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <img src="img/maybom3.webp" alt="Sửa điện nước" loading="lazy" decoding="async" width="600"
-                            height="400">
+                        <img src="img/maybom3.webp" alt="Sửa điện nước" loading="lazy" fetchpriority="low" decoding="async" width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Sửa điện nước Hóc Môn, Quận 12</h3>
                             <p>Kiểm tra rò rỉ, chập điện, yếu áp, nghẹt ống và thay thiết bị điện nước hỏng để hệ thống
@@ -483,8 +437,8 @@
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <img src="img/maybom4.webp" alt="Lắp đặt hệ thống nước" loading="lazy" decoding="async"
-                            width="600" height="400">
+                        <img src="img/maybom4.webp" alt="Lắp đặt hệ thống nước" loading="lazy" fetchpriority="low" decoding="async"
+                            width="960" height="1280">
                         <div class="service-card__body">
                             <h3>Lắp đặt hệ thống cấp thoát nước</h3>
                             <p>Đường ống gọn hơn, áp lực nước đều hơn và hệ thống thuận tiện cho bảo trì lâu dài.</p>
@@ -499,97 +453,6 @@
             </div>
         </section>
 
-        <section id="projects" class="section media-showcase">
-            <div class="container">
-                <div class="section-heading section-heading--split">
-                    <div>
-                        <span class="eyebrow">Thư viện công trình</span>
-                        <h2>Hình ảnh và video thực tế</h2>
-                    </div>
-                    <button class="btn btn-outline-dark" type="button" data-scroll-target="#contact">Đặt lịch khảo
-                        sát</button>
-                </div>
-                <div class="featured-media reveal">
-                    <div class="featured-media__video">
-                        <video controls playsinline preload="none" poster="img/khoangieng2.jpg">
-                            <source src="img/videokhoangieng2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="featured-media__content">
-                        <h3>Quy trình thi công được ghi lại trực tiếp</h3>
-                        <p>Khách có thể xem trước cách làm việc, thiết bị sử dụng và hiện trạng công trình thực tế trước
-                            khi gọi.</p>
-                        <div class="mini-media-grid">
-                            <button class="mini-media" type="button" data-media-type="video"
-                                data-media-src="img/videobomnuoc.mp4" data-media-poster="img/maybom2.jpg"
-                                data-media-title="Video sửa chữa máy bơm">
-                                <img src="img/maybom2.webp" alt="Sửa máy bơm" loading="lazy" decoding="async"
-                                    width="600" height="400">
-                                <span>Xem video máy bơm</span>
-                            </button>
-                            <button class="mini-media" type="button" data-media-type="image"
-                                data-media-src="img/khoangieng2.webp" data-media-title="Công trình khoan giếng">
-                                <img src="img/khoangieng2.webp" alt="Công trình khoan giếng" loading="lazy"
-                                    decoding="async" width="600" height="400">
-                                <span>Ảnh khoan giếng</span>
-                            </button>
-                            <button class="mini-media" type="button" data-media-type="image"
-                                data-media-src="img/maybom4.webp" data-media-title="Hệ thống máy bơm và đường ống">
-                                <img src="img/maybom4.webp" alt="Hệ thống máy bơm" loading="lazy" decoding="async"
-                                    width="600" height="400">
-                                <span>Ảnh hệ thống bơm</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-grid">
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/khoangieng1.webp" data-media-title="Khoan giếng dân dụng">
-                        <img src="img/khoangieng1.webp" alt="Khoan giếng dân dụng" loading="lazy" decoding="async"
-                            width="600" height="400">
-                    </button>
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/khoangieng2.webp" data-media-title="Khoan giếng thực tế">
-                        <img src="img/khoangieng2.webp" alt="Khoan giếng thực tế" loading="lazy" decoding="async"
-                            width="600" height="400">
-                    </button>
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/maybom.webp" data-media-title="Máy bơm dân dụng">
-                        <img src="img/maybom.webp" alt="Máy bơm dân dụng" loading="lazy" decoding="async" width="600"
-                            height="400">
-                    </button>
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/maybom2.webp" data-media-title="Kiểm tra máy bơm">
-                        <img src="img/maybom2.webp" alt="Kiểm tra máy bơm" loading="lazy" decoding="async" width="600"
-                            height="400">
-                    </button>
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/maybom3.webp" data-media-title="Sửa điện nước tại công trình">
-                        <img src="img/maybom3.webp" alt="Sửa điện nước" loading="lazy" decoding="async" width="600"
-                            height="400">
-                    </button>
-                    <button class="gallery-card reveal" type="button" data-media-type="image"
-                        data-media-src="img/hinh3.webp" data-media-title="Hệ lọc nước và xử lý phèn">
-                        <img src="img/hinh3.webp" alt="Hệ lọc nước" loading="lazy" decoding="async" width="600"
-                            height="400">
-                    </button>
-                    <button class="gallery-card gallery-card--video reveal" type="button" data-media-type="video"
-                        data-media-src="img/videokhoangieng.mp4" data-media-poster="img/khoangieng1.jpg"
-                        data-media-title="Video khoan giếng">
-                        <img src="img/khoangieng1.webp" alt="Video khoan giếng" loading="lazy" decoding="async"
-                            width="600" height="400">
-                        <span>Phát video</span>
-                    </button>
-                    <button class="gallery-card gallery-card--video reveal" type="button" data-media-type="video"
-                        data-media-src="img/videobomnuoc.mp4" data-media-poster="img/maybom.jpg"
-                        data-media-title="Video sửa máy bơm">
-                        <img src="img/maybom.webp" alt="Video sửa máy bơm" loading="lazy" decoding="async" width="600"
-                            height="400">
-                        <span>Phát video</span>
-                    </button>
-                </div>
-            </div>
-        </section>
 
         <section id="process" class="section section--dark">
             <div class="container">
@@ -624,45 +487,6 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="why-us">
-                    <div class="why-us__content reveal">
-                        <span class="eyebrow">Lý do chọn Đức Hậu</span>
-                        <h2>Đội ngũ có kinh nghiệm thực tế, xử lý nhanh và làm việc rõ ràng từ đầu.</h2>
-                        <p>Phần lớn khách gọi vì mất nước, máy bơm hư, rò điện nước hoặc cần khảo sát giếng. Cách làm
-                            của Đức Hậu là kiểm tra đúng lỗi rồi mới chốt phương án xử lý.</p>
-                        <div class="feature-list">
-                            <div>
-                                <h3>Khảo sát đúng lỗi, không làm lan man</h3>
-                                <p>Ưu tiên chốt đúng nguyên nhân để khách không phải trả thêm cho phần không cần thiết.
-                                </p>
-                            </div>
-                            <div>
-                                <h3>Thi công gọn, dùng bền hơn</h3>
-                                <p>Chọn cách làm giúp hệ thống vận hành ổn định và đỡ gọi thợ lặp lại sau đó.</p>
-                            </div>
-                            <div>
-                                <h3>Tiếp nhận nhanh khi khách đang cần gấp</h3>
-                                <p>Liên hệ qua hotline hoặc Zalo đều được ưu tiên phản hồi nhanh để giữ tiến độ sinh
-                                    hoạt.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="why-us__visual reveal">
-                        <img src="img/logo.webp" alt="Logo Đức Hậu" width="56" height="56">
-                        <div class="floating-card floating-card--primary">
-                            <strong>15+</strong>
-                            <span>Năm kinh nghiệm thực tế</span>
-                        </div>
-                        <div class="floating-card floating-card--secondary">
-                            <strong>5000+</strong>
-                            <span>Lượt khách đã hỗ trợ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section class="section">
             <div class="container">
@@ -695,166 +519,6 @@
             </div>
         </section>
 
-        <section class="section section--light">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Khu vực phục vụ</span>
-                    <h2>Khu vực nhận khoan giếng, sửa máy bơm và điện nước tại Hóc Môn, Quận 12</h2>
-                    <p>Ưu tiên hỗ trợ khách tại Tân Chánh Hiệp, Thới Tam Thôn, Xuân Thới Thượng, Xuân Thới Sơn, Đông
-                        Thạnh, Bà Điểm, Trung Chánh và các phường giáp Quận 12.</p>
-                </div>
-                <div class="trust-grid">
-                    <article class="reveal">
-                        <h3>Hóc Môn</h3>
-                        <p>Khoan giếng dân dụng, <a href="sua-may-bom-hoc-mon.html">sửa máy bơm nước Hóc Môn</a>, xử lý
-                            nước giếng, lọc phèn và sửa điện nước tại Tân Chánh Hiệp, Thới Tam Thôn, Xuân Thới Thượng,
-                            Xuân Thới Sơn, Đông Thạnh.</p>
-                    </article>
-                    <article class="reveal">
-                        <h3>Quận 12</h3>
-                        <p>Hỗ trợ nhanh các sự cố <a href="sua-may-bom-quan-12.html">sửa máy bơm nước Quận 12</a>, đường
-                            ống, cấp thoát nước và hệ thống nước gia đình.</p>
-                    </article>
-                    <article class="reveal">
-                        <h3>TP.HCM và khu vực lân cận</h3>
-                        <p>Nhận khảo sát công trình, báo giá rõ ràng và thi công theo hiện trạng thực tế từng khu vực.
-                        </p>
-                    </article>
-                </div>
-                <div class="mini-service-nav mt-4">
-                    <a href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a>
-                    <a href="khoan-gieng-quan-12.html">Khoan giếng Quận 12</a>
-                    <a href="sua-may-bom-quan-12.html">Sửa máy bơm Quận 12</a>
-                    <a href="sua-dien-nuoc-quan-12.html">Sửa điện nước Quận 12</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Chọn đúng dịch vụ</span>
-                    <h2>Nên gọi khoan giếng, sửa máy bơm hay sửa điện nước trong trường hợp nào?</h2>
-                    <p>Nhiều khách chỉ thấy một dấu hiệu chung là mất nước, nước yếu hoặc hóa đơn nước tăng bất thường.
-                        Khi mô tả đúng hiện trạng ngay từ đầu, thợ có thể chuẩn bị dụng cụ, linh kiện và phương án kiểm
-                        tra phù hợp hơn.</p>
-                </div>
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>Phân loại nhanh theo dấu hiệu tại nhà</h3>
-                        <table class="detail-table">
-                            <tbody>
-                                <tr>
-                                    <th>Dấu hiệu khách gặp</th>
-                                    <th>Hướng kiểm tra nên ưu tiên</th>
-                                </tr>
-                                <tr>
-                                    <td>Bơm chạy nhưng không lên nước, nước lên yếu hoặc lúc có lúc không.</td>
-                                    <td>Kiểm tra máy bơm, tụ, đường hút, van một chiều, mực nước giếng và khả năng mất mồi.</td>
-                                </tr>
-                                <tr>
-                                    <td>Nước giếng có màu vàng, mùi tanh, đóng cặn ở lavabo hoặc bồn chứa.</td>
-                                    <td>Khảo sát nguồn nước, nhu cầu sử dụng và phương án lọc phèn, lọc cặn phù hợp.</td>
-                                </tr>
-                                <tr>
-                                    <td>Nhà trọ, quán ăn hoặc hộ gia đình dùng nhiều nước nhưng nguồn hiện tại không đủ.</td>
-                                    <td>Khảo sát khoan giếng mới, cải tạo giếng cũ hoặc nâng cấp máy bơm theo lưu lượng thực tế.</td>
-                                </tr>
-                                <tr>
-                                    <td>Tường ẩm, nền rỉ nước, đồng hồ nước quay dù không mở vòi.</td>
-                                    <td>Kiểm tra rò rỉ đường ống, khóa van từng nhánh và xử lý điểm rò trước khi phá sửa rộng.</td>
-                                </tr>
-                                <tr>
-                                    <td>Ổ cắm nóng, CB nhảy, máy nước nóng hoặc khu vực nhà tắm có dấu hiệu chập điện.</td>
-                                    <td>Ngắt nguồn khu vực nghi ngờ, kiểm tra chống rò, dây dẫn, thiết bị và điểm nối điện.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="content-card">
-                        <h3>Cách Đức Hậu tư vấn để tránh làm dư hạng mục</h3>
-                        <p>Với mỗi ca, Đức Hậu ưu tiên tìm nguyên nhân chính trước khi chốt phương án. Nếu máy bơm yếu vì
-                            tụ, van hoặc đường hút, khách chưa cần nghĩ ngay đến khoan giếng mới. Nếu giếng cũ vẫn còn
-                            khả năng cải tạo, phương án cải tạo có thể tiết kiệm hơn so với khoan lại từ đầu.</p>
-                        <p>Ngược lại, nếu công trình có nhu cầu dùng nước lớn, giếng cũ cạn kéo dài hoặc nguồn nước hiện
-                            tại không ổn định, khảo sát khoan giếng và cấu hình lại hệ thống bơm sẽ hợp lý hơn. Cách làm
-                            này giúp khách có phương án rõ: sửa gì trước, chi phí nào bắt buộc, hạng mục nào có thể làm
-                            sau.</p>
-                        <div class="service-note">Khi gọi, bạn nên nói rõ khu vực, loại nhà, số người dùng nước, dấu hiệu
-                            đang gặp và gửi hình/video qua Zalo nếu có. Thông tin càng rõ thì lịch khảo sát càng dễ chốt
-                            nhanh.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="eyebrow">Kiến thức thực tế</span>
-                    <h2>Bài viết hữu ích về khoan giếng, máy bơm và nước sinh hoạt tại Hóc Môn, Quận 12, TP.HCM</h2>
-                </div>
-                <div class="blog-grid">
-                    <article class="blog-card reveal">
-                        <img src="img/khoangieng2.webp" alt="Giá khoan giếng Hóc Môn" loading="lazy" decoding="async"
-                            width="600" height="400">
-                        <div class="blog-card__body">
-                            <h3>Giá khoan giếng tại Hóc Môn, Quận 12 phụ thuộc vào những gì?</h3>
-                            <p>Giải thích các yếu tố ảnh hưởng tới chi phí khoan giếng như độ sâu, địa chất, cấu hình
-                                ống
-                                và mục đích sử dụng nước.</p>
-                            <a class="btn btn-outline-dark mt-3" href="gia-khoan-gieng-hoc-mon.html">Đọc bài giá khoan
-                                giếng</a>
-                        </div>
-                    </article>
-                    <article class="blog-card reveal">
-                        <img src="img/maybom2.webp" alt="Máy bơm yếu nước tại Hóc Môn" loading="lazy" decoding="async"
-                            width="600" height="400">
-                        <div class="blog-card__body">
-                            <h3>Máy bơm yếu nước, không lên nước ở Hóc Môn: nguyên nhân thường gặp</h3>
-                            <p>Tổng hợp dấu hiệu thường thấy khi máy bơm dân dụng hoạt động bất thường và thời điểm nên
-                                gọi thợ kiểm tra.</p>
-                            <a class="btn btn-outline-dark mt-3" href="may-bom-yeu-nuoc-hoc-mon.html">Đọc bài máy bơm
-                                yếu nước</a>
-                        </div>
-                    </article>
-                    <article class="blog-card reveal">
-                        <img src="img/hinh3.webp" alt="Nước giếng bị phèn tại Hóc Môn" loading="lazy" decoding="async"
-                            width="600" height="400">
-                        <div class="blog-card__body">
-                            <h3>Nước giếng bị phèn ở Hóc Môn, Quận 12 xử lý như thế nào?</h3>
-                            <p>Những dấu hiệu nhận biết nước giếng bị phèn, vì sao cần lọc và các hướng xử lý phù hợp
-                                với
-                                nhu cầu sinh hoạt.</p>
-                            <a class="btn btn-outline-dark mt-3" href="nuoc-gieng-bi-phen-hoc-mon.html">Đọc bài nước
-                                giếng bị phèn</a>
-                        </div>
-                    </article>
-                    <article class="blog-card reveal">
-                        <img src="img/maybom3.webp" alt="Rò rỉ ống nước âm tường tại Hóc Môn" loading="lazy"
-                            decoding="async" width="600" height="400">
-                        <div class="blog-card__body">
-                            <h3>Ống nước bị rò rỉ âm tường ở Hóc Môn: dấu hiệu và cách xử lý</h3>
-                            <p>Dấu hiệu thường gặp khi đường ống bị rò âm tường như ẩm tường, nước yếu hoặc hóa đơn nước
-                                tăng bất thường.</p>
-                            <a class="btn btn-outline-dark mt-3" href="ro-ri-ong-nuoc-hoc-mon.html">Đọc bài rò rỉ ống
-                                nước</a>
-                        </div>
-                    </article>
-                    <article class="blog-card reveal">
-                        <img src="img/maybom3.webp" alt="Chập điện nhà tắm tại Quận 12" loading="lazy" decoding="async"
-                            width="600" height="400">
-                        <div class="blog-card__body">
-                            <h3>Chập điện nhà tắm ở Quận 12: dấu hiệu nguy hiểm và cách xử lý</h3>
-                            <p>Những dấu hiệu dễ gặp ở khu vực nhà tắm, máy nước nóng hoặc ổ cắm gần nơi ẩm ướt cần kiểm
-                                tra sớm.</p>
-                            <a class="btn btn-outline-dark mt-3" href="chap-dien-nha-tam-quan-12.html">Đọc bài chập điện
-                                nhà tắm</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
 
 
 
@@ -1014,8 +678,8 @@
         </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/bootstrap.bundle.min.js?v=20260508-6"></script>
+    <script src="js/site.js?v=20260508-6"></script>
 </body>
 
 </html>

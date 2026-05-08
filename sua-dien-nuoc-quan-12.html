@@ -2,15 +2,49 @@
 <html lang="vi">
 
 <head>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT161QECN5"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TT161QECN5');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        (function () {
+            const analyticsId = 'G-TT161QECN5';
+            const triggerEvents = ['pointerdown', 'keydown', 'touchstart'];
+            const listenerOptions = { once: true, passive: true };
+            let analyticsLoaded = false;
+
+            function cleanup() {
+                triggerEvents.forEach((eventName) => {
+                    window.removeEventListener(eventName, loadAnalytics, listenerOptions);
+                });
+            }
+
+            function loadAnalytics() {
+                if (analyticsLoaded) {
+                    return;
+                }
+
+                analyticsLoaded = true;
+                cleanup();
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+                document.head.appendChild(script);
+
+                gtag('config', analyticsId);
+            }
+
+            function scheduleAnalytics() {
+                window.setTimeout(loadAnalytics, 3200);
+            }
+
+            triggerEvents.forEach((eventName) => {
+                window.addEventListener(eventName, loadAnalytics, listenerOptions);
+            });
+
+            window.addEventListener('load', scheduleAnalytics, { once: true });
+        }());
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,8 +71,7 @@
     <link rel="canonical" href="https://khoangiengduchau.com/sua-dien-nuoc-quan-12.html">
     <link rel="icon" type="image/webp" href="img/logo.webp">
         <link rel="preload" as="image" href="img/maybom3.webp" type="image/webp">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/site.css?v=20260508-6">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -125,23 +158,40 @@
             </div>
         </div>
     </div>
-
     <header class="site-header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html" aria-label="Khoan Giếng Đức Hậu">
+                <a class="navbar-brand" href="index.html" aria-label="Đức Hậu - Khoan giếng và điện nước">
                     <img src="img/logo.webp" alt="Logo Khoan Giếng Đức Hậu" width="56" height="56">
-                    <span><strong>Đức Hậu</strong><small>Khoan giếng và điện nước</small></span>
+                    <span>
+                        <strong>Đức Hậu</strong>
+                        <small>Khoan giếng và điện nước</small>
+                    </span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuDien12"
-                    aria-controls="navbarMenuDien12" aria-expanded="false" aria-label="Mở menu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Mở menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div id="navbarMenuDien12" class="collapse navbar-collapse">
+                <div id="navbarMenu" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="khoan-gieng-quan-12.html">Khoan giếng</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sua-may-bom-quan-12.html">Sửa máy bơm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Dịch vụ</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="khoan-gieng-hoc-mon.html">Khoan giếng Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-quan-12.html">Khoan giếng Quận 12</a></li>
+                                <li><a class="dropdown-item" href="khoan-gieng-cong-nghiep.html">Khoan giếng công nghiệp</a></li>
+                                <li><a class="dropdown-item" href="sua-chua-gieng-khoan.html">Sửa chữa giếng khoan</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-hoc-mon.html">Sửa máy bơm Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-may-bom-quan-12.html">Sửa máy bơm Quận 12</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-hoc-mon.html">Sửa điện nước Hóc Môn</a></li>
+                                <li><a class="dropdown-item" href="sua-dien-nuoc-quan-12.html">Sửa điện nước Quận 12</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Bài viết</a>
@@ -149,11 +199,11 @@
                                 <li><a class="dropdown-item" href="gia-khoan-gieng-hoc-mon.html">Giá khoan giếng Hóc Môn</a></li>
                                 <li><a class="dropdown-item" href="may-bom-yeu-nuoc-hoc-mon.html">Máy bơm yếu nước ở Hóc Môn</a></li>
                                 <li><a class="dropdown-item" href="nuoc-gieng-bi-phen-hoc-mon.html">Nước giếng bị phèn ở Hóc Môn</a></li>
-                                <li><a class="dropdown-item" href="ro-ri-ong-nuoc-hoc-mon.html">Ống nước bị rò rỉ âm tường ở Hóc Môn</a></li>
-                                <li><a class="dropdown-item" href="chap-dien-nha-tam-quan-12.html">Chập điện nhà tắm ở Quận 12</a></li>
+                                <li><a class="dropdown-item" href="ro-ri-ong-nuoc-hoc-mon.html">Ống nước rò rỉ âm tường</a></li>
+                                <li><a class="dropdown-item" href="chap-dien-nha-tam-quan-12.html">Chập điện nhà tắm Quận 12</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
                     </ul>
                     <a class="btn btn-primary btn-call ms-lg-3" href="tel:0908286818">Gọi ngay</a>
                 </div>
@@ -181,7 +231,7 @@
                     </div>
                 </div>
                 <div class="page-hero__visual">
-                    <img src="img/maybom3.webp" alt="Sửa điện nước Quận 12" width="600" height="400">
+                    <img src="img/maybom3.webp" alt="Sửa điện nước Quận 12" width="960" height="1280">
                 </div>
             </div>
         </section>
@@ -438,8 +488,8 @@
             </svg>
         </a>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/bootstrap.bundle.min.js?v=20260508-6"></script>
+    <script src="js/site.js?v=20260508-6"></script>
 </body>
 
 </html>

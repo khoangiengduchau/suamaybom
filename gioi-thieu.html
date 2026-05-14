@@ -6,8 +6,34 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
+        window.gtag_report_conversion = function (url) {
+            let navigated = false;
+
+            function navigate() {
+                if (navigated) {
+                    return;
+                }
+
+                navigated = true;
+
+                if (typeof url !== 'undefined') {
+                    window.location.href = url;
+                }
+            }
+
+            window.setTimeout(navigate, 500);
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17724601583/f6KuCOSCia0cEO_p34NC',
+                'value': 1.0,
+                'currency': 'VND',
+                'event_callback': navigate
+            });
+            return false;
+        };
+
         (function () {
             const analyticsId = 'G-TT161QECN5';
+            const adsId = 'AW-17724601583';
             const triggerEvents = ['pointerdown', 'keydown', 'touchstart'];
             const listenerOptions = { once: true, passive: true };
             let analyticsLoaded = false;
@@ -32,6 +58,7 @@
                 document.head.appendChild(script);
 
                 gtag('config', analyticsId);
+                gtag('config', adsId);
             }
 
             function scheduleAnalytics() {
@@ -45,7 +72,7 @@
             window.addEventListener('load', scheduleAnalytics, { once: true });
         }());
     </script>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới Thiệu Khoan Giếng Đức Hậu | 15+ Năm Kinh Nghiệm TP.HCM</title>
     <meta name="description" content="Khoan Giếng Đức Hậu – hơn 15 năm kinh nghiệm khoan giếng, sửa máy bơm và điện nước dân dụng tại Hóc Môn, Quận 12, TP.HCM. Đội ngũ thợ tay nghề cao, báo giá minh bạch.">

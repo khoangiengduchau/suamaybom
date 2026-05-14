@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const counterItems = document.querySelectorAll("[data-count]");
     const scrollButtons = document.querySelectorAll("[data-scroll-target]");
     const mediaButtons = document.querySelectorAll("[data-media-type]");
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
     const hoverDropdowns = document.querySelectorAll(".navbar .dropdown");
     const mediaModalElement = document.getElementById("mediaModal");
     const mediaModalTitle = document.getElementById("mediaModalTitle");
@@ -78,6 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (target) {
                 target.scrollIntoView({ behavior: "smooth", block: "start" });
             }
+        });
+    });
+
+    phoneLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            if (typeof window.gtag_report_conversion !== "function") {
+                return;
+            }
+
+            event.preventDefault();
+            window.gtag_report_conversion(link.href);
         });
     });
 

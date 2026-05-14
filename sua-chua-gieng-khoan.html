@@ -6,8 +6,34 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
+        window.gtag_report_conversion = function (url) {
+            let navigated = false;
+
+            function navigate() {
+                if (navigated) {
+                    return;
+                }
+
+                navigated = true;
+
+                if (typeof url !== 'undefined') {
+                    window.location.href = url;
+                }
+            }
+
+            window.setTimeout(navigate, 500);
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17724601583/f6KuCOSCia0cEO_p34NC',
+                'value': 1.0,
+                'currency': 'VND',
+                'event_callback': navigate
+            });
+            return false;
+        };
+
         (function () {
             const analyticsId = 'G-TT161QECN5';
+            const adsId = 'AW-17724601583';
             const triggerEvents = ['pointerdown', 'keydown', 'touchstart'];
             const listenerOptions = { once: true, passive: true };
             let analyticsLoaded = false;
@@ -32,6 +58,7 @@
                 document.head.appendChild(script);
 
                 gtag('config', analyticsId);
+                gtag('config', adsId);
             }
 
             function scheduleAnalytics() {
@@ -45,7 +72,7 @@
             window.addEventListener('load', scheduleAnalytics, { once: true });
         }());
     </script>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sửa Chữa Giếng Khoan TP.HCM | Giếng Yếu Nước, Tụt Nước | Đức Hậu</title>
     <meta name="description" content="Dịch vụ sửa chữa giếng khoan tại Hóc Môn, Quận 12, TP.HCM. Xử lý giếng yếu nước, tụt nước, bơm lên cát bùn, giếng bị vùi lấp. Gọi Đức Hậu 0908 286 818.">

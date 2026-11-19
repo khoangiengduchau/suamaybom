@@ -766,8 +766,8 @@ a {
     background: rgba(31, 122, 140, 0.08);
 }
 
-.detail-table tr:last-child th,
-.detail-table tr:last-child td {
+.detail-table tbody tr:last-child th,
+.detail-table tbody tr:last-child td {
     border-bottom: 0;
 }
 
